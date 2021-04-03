@@ -1,0 +1,49 @@
+{
+  "name": "pool_system_be",
+  "version": "0.0.1",
+  "description": "voting system 2021 backend project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasim12071/pool_system_be.git"
+  },
+  "keywords": [
+    "voting",
+    "monogdb",
+    "expressjs",
+    "nodejs",
+    "socketio"
+  ],
+  "author": "Waxim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wasim12071/pool_system_be/issues"
+  },
+  "homepage": "https://github.com/wasim12071/pool_system_be#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "http": "0.0.1-security",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.3",
+    "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^5.0.0"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.6"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "PORT": 3000,
+    "TOKEN_SECRET": "f1weny3$34ed32riou",
+    "MONGO_CONNECTION": "",
+    "WHITELIST": "",
+    "PAGE_404": ""
+}
