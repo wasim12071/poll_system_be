@@ -18,7 +18,7 @@ Run `npm i` to install all dependencies.
     "PAGE_404": "http://localhost:4200/404"
 }
 3. If you are using your own cluster, you need to seed the data first. Open the terminal in the `seeder` folder, within this project folder and run the following command, `node seeder.js`. For some devices/ enivironments it can be `node ./seeder.js`. Once this execution is complete, the data will be available to use. The sample data consists of 1 admin user and 5 nominees.
-4. Go back to the project folder, if you have nodemon installed globally, simply run `nodemon` to start the server, or start the server by executing `index.js` file using node.
+4. Go back to the project folder. Run `npm i` to install all dependecies first. If you have nodemon installed globally, simply run `nodemon` to start the server, or start the server by executing `index.js` file using node.
 5. The server will be running on to `http://localhost:3000/`, assuming you have configured port 3000 in `config.json` file. 
 
 
