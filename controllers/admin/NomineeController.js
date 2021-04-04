@@ -6,7 +6,6 @@ const { Response } = require('./../../utils/Response')
 const { ErrorHandler } = require('./../../utils/ErrorHandler')
 
 class NomineeController {
-
     /**
      * API | GET
      * Get a specific nominee.
@@ -18,7 +17,7 @@ class NomineeController {
      */
     static async getNominee (req, res) {
         try {
-            let nominee = await Nominee.findById(req.query.nomineeId)
+            const nominee = await Nominee.findById(req.query.nomineeId)
             return new Response(res, { nominee }, 'Nominee found.', true)
         } catch (error) {
             ErrorHandler.sendError(res, error)
@@ -39,7 +38,7 @@ class NomineeController {
         try {
             let nominee = new Nominee({ firstName: req.body.firstName, lastName: req.body.lastName })
             nominee = await nominee.save()
-            return new Response(res, { nominee }, `Nominee addition ${nominee ? "successful" : "Unsuccessful"}.`, nominee ? true : false, nominee ? 200 : 400 )
+            return new Response(res, { nominee }, `Nominee addition ${nominee ? 'successful' : 'Unsuccessful'}.`, !!nominee, nominee ? 200 : 400)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }
@@ -64,7 +63,7 @@ class NomineeController {
                     lastName: req.body.lastName
                 }
             })
-            return new Response(res, { }, `Nominee update ${updateNominee ? "successful" : "Unsuccessful"}.`, updateNominee ? true : false, updateNominee ? 200 : 400 )
+            return new Response(res, { }, `Nominee update ${updateNominee ? 'successful' : 'Unsuccessful'}.`, !!updateNominee, updateNominee ? 200 : 400)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }
@@ -83,7 +82,7 @@ class NomineeController {
         try {
             await Vote.deleteMany({ nomineeId: req.query.nomineeId })
             const updateNominee = await Nominee.findByIdAndRemove(req.query.nomineeId)
-            return new Response(res, { }, `Nominee delete ${updateNominee ? "successful" : "Unsuccessful"}.`, updateNominee ? true : false, updateNominee ? 200 : 400 )
+            return new Response(res, { }, `Nominee delete ${updateNominee ? 'successful' : 'Unsuccessful'}.`, !!updateNominee, updateNominee ? 200 : 400)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }

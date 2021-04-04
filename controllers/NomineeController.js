@@ -5,7 +5,6 @@ const { Response } = require('./../utils/Response')
 const { ErrorHandler } = require('./../utils/ErrorHandler')
 
 class NomineeController {
-    
     /**
      * API | GET
      * Get all nominees.
@@ -15,12 +14,11 @@ class NomineeController {
      */
     static async getNominees (req, res) {
         try {
-            let nominees = await Nominee.find({})
+            const nominees = await Nominee.find({})
             return new Response(res, { nominees }, 'Nominees found.', true)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }
     }
-
 }
 module.exports = { NomineeController }

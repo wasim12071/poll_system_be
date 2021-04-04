@@ -2,7 +2,7 @@
 
 const { mongoose } = require('./mongoose')
 
-let userSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
         firstName: {
             type: String,
@@ -28,5 +28,5 @@ let userSchema = new mongoose.Schema(
 
 userSchema.index({ email: 1 }, { unique: true })
 
-let User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
 module.exports = { User }

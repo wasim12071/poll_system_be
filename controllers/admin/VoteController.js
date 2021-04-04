@@ -14,7 +14,7 @@ class VoteController {
      */
     static async getVotes (req, res) {
         try {
-            let nominees = await VoteHelper.getVoteStats();
+            const nominees = await VoteHelper.getVoteStats()
             return new Response(res, { nominees }, 'Votes found.', true)
         } catch (error) {
             ErrorHandler.sendError(res, error)

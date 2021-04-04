@@ -8,10 +8,9 @@ const jwt = require('jwt-simple')
 const config = require('./../config')
 
 class AuthMiddleware {
-
     /**
      * Create JWT token with 1 Year expiry.
-     * @param {*} user 
+     * @param {*} user
      * @returns String
      */
     static createJWT (user) {
@@ -39,26 +38,21 @@ class AuthMiddleware {
      */
     static async isAuthorized (req, res, next) {
         try {
-
             // Check if the token is attached in the header
             if (req.header('token')) {
-                
                 // Check if the user is present.
                 const user = await User.findOne({ _id: AuthMiddleware.decodeJWT(req.header('token')).uid })
                 if (user) {
-
                     // Attach the user object to the request.
-                    req.user = user;
+                    req.user = user
                     next()
                 } else {
-
                     // If the user session is expired.
-                    throw('Whops! Your session has expired. Please login again.')
+                    throw ('Whops! Your session has expired. Please login again.')
                 }
             } else {
-
                 // If the token is not attached, meaning user is not logged in.
-                throw('You need to login, to perform this action.')
+                throw ('You need to login, to perform this action.')
             }
         } catch (error) {
             ErrorHandler.sendError(res, error)

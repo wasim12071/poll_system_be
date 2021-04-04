@@ -11,32 +11,31 @@ class NomineeSeeder {
             console.log('Inserting new entries into Nominee collection.')
             const nominies = [
                 {
-                    firstName: "Dan",
-                    lastName: "Richordson",
+                    firstName: 'Dan',
+                    lastName: 'Richordson'
                 },
                 {
-                    firstName: "John",
-                    lastName: "Doe",
+                    firstName: 'John',
+                    lastName: 'Doe'
                 },
                 {
-                    firstName: "Alex",
-                    lastName: "Preston",
+                    firstName: 'Alex',
+                    lastName: 'Preston'
                 },
                 {
-                    firstName: "Tony",
-                    lastName: "Stark",
+                    firstName: 'Tony',
+                    lastName: 'Stark'
                 },
                 {
-                    firstName: "Phenix",
-                    lastName: "Trever",
+                    firstName: 'Phenix',
+                    lastName: 'Trever'
                 }
             ]
             await Nominee.insertMany(nominies)
             console.log('Nominee seeding completed.')
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
     }
-
 }
 module.exports = { NomineeSeeder }

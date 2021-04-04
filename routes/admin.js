@@ -14,7 +14,6 @@ router.post('/nominee', NomineeController.addNominee)
 router.put('/nominee', NomineeController.updateNominee)
 router.delete('/nominee', NomineeController.deleteNominee)
 
-
 /** Admin User Details Endpoints */
 router.get('/profile', UserController.getProfile)
 router.put('/profile', UserController.updateProfile)

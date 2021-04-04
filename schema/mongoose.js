@@ -9,7 +9,6 @@ mongoose.set('useCreateIndex', true)
 
 const connect = () => {
     try {
-
         /** Connect the MongoDB (Assuming its a hosted cluster, else if its being hosted on a private server,
             we can first do ssh tunneling and then run the following cde once the ssh connection is established) */
         mongoose.connect(config.MONGO_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -18,7 +17,7 @@ const connect = () => {
             console.log('Database connection successful.')
         })
     } catch (error) {
-        console.log("Fatel Error! Unable to connect to database.")
+        console.log('Fatel Error! Unable to connect to database.')
     }
 }
 

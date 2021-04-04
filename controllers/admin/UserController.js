@@ -16,7 +16,7 @@ class UserController {
     static async getProfile (req, res) {
         try {
             const user = await User.findOne({ _id: req.user._id })
-            return new Response(res, { user }, "User Profile found!", true)
+            return new Response(res, { user }, 'User Profile found!', true)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }
@@ -40,7 +40,7 @@ class UserController {
                     lastName: req.body.lastName || req.user.lastName
                 }
             })
-            return new Response(res, { }, `User profile update ${updateProfile ? "successful" : "Unsuccessful"}.`, updateProfile ? true : false, updateProfile ? 200 : 400 )
+            return new Response(res, { }, `User profile update ${updateProfile ? 'successful' : 'Unsuccessful'}.`, !!updateProfile, updateProfile ? 200 : 400)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }
@@ -62,7 +62,7 @@ class UserController {
                     password: bcrypt.hashSync(req.body.password, 8)
                 }
             })
-            return new Response(res, { }, `User password update ${updateProfile ? "successful" : "Unsuccessful"}.`, updateProfile ? true : false, updateProfile ? 200 : 400 )
+            return new Response(res, { }, `User password update ${updateProfile ? 'successful' : 'Unsuccessful'}.`, !!updateProfile, updateProfile ? 200 : 400)
         } catch (error) {
             ErrorHandler.sendError(res, error)
         }

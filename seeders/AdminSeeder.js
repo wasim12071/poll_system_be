@@ -10,18 +10,17 @@ class AdminSeeder {
             await User.deleteMany({})
             console.log('Inserting new entries into Admin Users collection.')
             let user = new User({
-                email: "admin@votinator.com",
-                password: bcrypt.hashSync("12345678", 8),
-                firstName: "Wasim Hassan",
-                lastName: "Khan"
+                email: 'admin@votinator.com',
+                password: bcrypt.hashSync('12345678', 8),
+                firstName: 'Wasim Hassan',
+                lastName: 'Khan'
             })
             user = await user.save()
 
             console.log('Admin users seeding completed.')
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
     }
-
 }
 module.exports = { AdminSeeder }

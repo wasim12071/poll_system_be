@@ -2,7 +2,7 @@
 
 const { mongoose } = require('./mongoose')
 
-let voteSchema = new mongoose.Schema(
+const voteSchema = new mongoose.Schema(
     {
         nomineeId: {
             type: mongoose.Schema.Types.ObjectId,
@@ -21,5 +21,5 @@ let voteSchema = new mongoose.Schema(
 
 voteSchema.index({ email: 1 }, { unique: true })
 
-let Vote = mongoose.model('Vote', voteSchema)
+const Vote = mongoose.model('Vote', voteSchema)
 module.exports = { Vote }

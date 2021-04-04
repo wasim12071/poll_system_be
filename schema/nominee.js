@@ -2,7 +2,7 @@
 
 const { mongoose } = require('./mongoose')
 
-let nomineeSchema = new mongoose.Schema(
+const nomineeSchema = new mongoose.Schema(
     {
         firstName: {
             type: String,
@@ -18,5 +18,5 @@ let nomineeSchema = new mongoose.Schema(
     }
 )
 
-let Nominee = mongoose.model('Nominee', nomineeSchema)
+const Nominee = mongoose.model('Nominee', nomineeSchema)
 module.exports = { Nominee }
